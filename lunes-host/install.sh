@@ -17,8 +17,7 @@ mv xray xy
 curl -sSL -o config.json https://raw.githubusercontent.com/crarm/one-node/refs/heads/main/lunes-host/xray-config.json
 sed -i "s/10008/$PORT/g" config.json
 sed -i "s/YOUR_UUID/$UUID/g" config.json
-sed -i "s/YOUR_PATH/$MYPATH/g" config.json
-vmess="{\"v\": \"2\",\"ps\": \"lunes-vmess\",\"add\": \"$DOMAIN\",\"port\": \"$PORT\",\"id\": \"$UUID\",\"aid\": \"64\",\"scy\": \"auto\",\"net\": \"ws\",\"type\": \"none\",\"host\": \"$DOMAIN\",\"path\": \"/$MYPATH\",\"tls\": \"\",\"sni\": \"$DOMAIN\",\"alpn\": \"\"}"
+vmess="{\"v\": \"2\",\"ps\": \"lunes-vmess\",\"add\": \"$DOMAIN\",\"port\": \"$PORT\",\"id\": \"$UUID\",\"aid\": \"64\",\"scy\": \"auto\",\"net\": \"ws\",\"type\": \"none\",\"host\": \"$DOMAIN\",\"path\": \"/$UUID\",\"tls\": \"\",\"sni\": \"$DOMAIN\",\"alpn\": \"\"}"
 
 vmessUrl="vmess://"$(echo $vmess | base64 -w 0 )
 echo $vmessUrl > /home/container/node.txt
