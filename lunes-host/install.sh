@@ -2,7 +2,7 @@
 
 DOMAIN="${DOMAIN:-node68.lunes.host}"
 PORT="${PORT:-10008}"
-PATH="${PATH:-/vmess}"
+MYPATH="${PATH:-/vmess}"
 UUID="${UUID:-2584b733-9095-4bec-a7d5-62b473540f7a}"
 HY2_PASSWORD="${HY2_PASSWORD:-vevc.HY2.Password}"
 
@@ -18,10 +18,10 @@ mv xray xy
 curl -sSL -o config.json https://raw.githubusercontent.com/crarm/one-node/refs/heads/main/lunes-host/xray-config.json
 sed -i "s/10008/$PORT/g" config.json
 sed -i "s/YOUR_UUID/$UUID/g" config.json
-sed -i "s/YOUR_PATH/$PATH/g" config.json
-vmess="{\"v\": \"2\",\"ps\": \"lunes-vmess\",\"add\": $DOMAIN,\"port\": $PORT,\"id\": $UUID,\"aid\": \"64\",\"scy\": \"auto\",\"net\": \"ws\",\"type\": \"none\",\"host\": $DOMAIN,\"path\": $PATH,\"tls\": \"\",\"sni\": $DOMAIN,\"alpn\": \"\"}"
+sed -i "s/YOUR_PATH/$MYPATH/g" config.json
+vmess="{\"v\": \"2\",\"ps\": \"lunes-vmess\",\"add\": $DOMAIN,\"port\": $PORT,\"id\": $UUID,\"aid\": \"64\",\"scy\": \"auto\",\"net\": \"ws\",\"type\": \"none\",\"host\": $DOMAIN,\"path\": $MYPATH,\"tls\": \"\",\"sni\": $DOMAIN,\"alpn\": \"\"}"
 
-vmessUrl="vless://"$(base64 -w 0 $vmess)
+vmessUrl="vless://"$(echo $vmess | base64 -w 0 )
 echo $vmessUrl > /home/container/node.txt
 
 mkdir -p /home/container/h2
