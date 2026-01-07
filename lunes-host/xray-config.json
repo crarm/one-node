@@ -20,7 +20,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "/sdfwtswftg"
+          "path": "PATH"
         }
       }
     }
