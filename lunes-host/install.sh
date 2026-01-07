@@ -20,7 +20,7 @@ sed -i "s/YOUR_UUID/$UUID/g" config.json
 sed -i "s/YOUR_PATH/$MYPATH/g" config.json
 vmess="{\"v\": \"2\",\"ps\": \"lunes-vmess\",\"add\": \"$DOMAIN\",\"port\": \"$PORT\",\"id\": \"$UUID\",\"aid\": \"64\",\"scy\": \"auto\",\"net\": \"ws\",\"type\": \"none\",\"host\": \"$DOMAIN\",\"path\": \"/$MYPATH\",\"tls\": \"\",\"sni\": \"$DOMAIN\",\"alpn\": \"\"}"
 
-vmessUrl="vless://"$(echo $vmess | base64 -w 0 )
+vmessUrl="vmess://"$(echo $vmess | base64 -w 0 )
 echo $vmessUrl > /home/container/node.txt
 
 mkdir -p /home/container/h2
