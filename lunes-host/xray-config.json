@@ -20,7 +20,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "YOUR_PATH"
+          "path": "/YOUR_UUID"
         }
       }
     }
