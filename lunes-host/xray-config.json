@@ -12,7 +12,7 @@
             "id": "YOUR_UUID",
             "alterId": 64,
             "security": "auto",
-            "email": "lunes-reality"
+            "email": "lunes-vmess"
           }
         ]
       },
@@ -20,7 +20,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "PATH"
+          "path": "YOUR_PATH"
         }
       }
     }
