@@ -35,7 +35,7 @@ hy2Url="hysteria2://$encodedHy2Pwd@$DOMAIN:$PORT?insecure=1#lunes-hy2"
 echo $hy2Url >> /home/container/node.txt
 
 echo "============================================================"
-echo "🚀 VLESS Reality & HY2 Node Info"
+echo "🚀 VMESS & HY2 Node Info"
 echo "------------------------------------------------------------"
 echo "$vmessUrl"
 echo "$hy2Url"
